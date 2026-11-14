@@ -55,10 +55,27 @@
 //Part B: Changing what’s on the page (about 40 minutes)
 //4: Set the title using textContent. Then set textContent = "<b>Hi</b>" and see what the page shows. Then set innerHTML to the same string. Predict both before running, and write down what the difference means for text that comes from a user.
 
-const title = document.querySelector("#title");
+// const title = document.querySelector("#title");
 
-title.textContent = "Ahmed Store";
-title.textContent = "<b>Hi</b>";   //not evaliated simply 
-title.innerHTML= "<b>Hi</b>";      //Hi is addede as a string
+// title.textContent = "Ahmed Store";
+// title.textContent = "<b>Hi</b>";   //not evaliated simply 
+// title.innerHTML= "<b>Hi</b>";      //Hi is addede as a string
 
    //of comes from a user , a user can run scripts 
+
+   //5:Using classList on the second .note: add highlight, remove it,
+   //  then toggle it twice. Predict what contains("highlight") returns after the two toggles.
+
+
+   const notes = document.querySelectorAll(".note");
+
+   const secondNote = notes[1];
+
+   secondNote.classList.add("highlight");//added highlight class and note class is preserved
+
+   secondNote.classList.remove("highlight")
+   secondNote.classList.toggle("highlight")
+   secondNote.classList.toggle("highlight")
+
+   console.log(secondNote.classList.contains("highlight"))
+   
