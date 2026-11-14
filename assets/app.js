@@ -31,21 +31,34 @@
    //  and why? (One list is a snapshot, the other keeps itself up to date.)
 
 
-const a = document.querySelectorAll(".item") 
-const b = document.getElementsByClassName("item")
+// const a = document.querySelectorAll(".item") 
+// const b = document.getElementsByClassName("item")
 
-console.log(a.length)
-console.log(b.length)
+// console.log(a.length)
+// console.log(b.length)
 
-const list = document.querySelector("#menu") 
-const li = document.createElement("li");
+// const list = document.querySelector("#menu") 
+// const li = document.createElement("li");
 
-li.textContent = "Dynamic list item";
-li.className = "item";   
-list.append(li);
+// li.textContent = "Dynamic list item";
+// li.className = "item";   
+// list.append(li);
 
 
-// Reprinting lengths again  
+// // Reprinting lengths again  
 
-console.log(a.length) // it take snapshot
-console.log(b.length) //4
+// console.log(a.length) // it take snapshot
+// console.log(b.length) //4
+
+
+
+//Part B: Changing what’s on the page (about 40 minutes)
+//4: Set the title using textContent. Then set textContent = "<b>Hi</b>" and see what the page shows. Then set innerHTML to the same string. Predict both before running, and write down what the difference means for text that comes from a user.
+
+const title = document.querySelector("#title");
+
+title.textContent = "Ahmed Store";
+title.textContent = "<b>Hi</b>";   //not evaliated simply 
+title.innerHTML= "<b>Hi</b>";      //Hi is addede as a string
+
+   //of comes from a user , a user can run scripts 
