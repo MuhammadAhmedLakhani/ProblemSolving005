@@ -85,22 +85,41 @@
 // of all items, correctly. Prove your total is a number with typeof.
 
 
-const items = document.querySelectorAll(".item");
+// const items = document.querySelectorAll(".item");
 
-// turnit into  list first
+// // turnit into  list first
 
-const arr = [...items]
+// const arr = [...items]
 
 
-const total = arr.reduce((sum, elem) => {
-    return sum + Number(elem.dataset.price)
-}, 0);
+// const total = arr.reduce((sum, elem) => {
+//     return sum + Number(elem.dataset.price)
+// }, 0);
 
-// typeof total
+// // typeof total
 
-console.log("type total-->",typeof(total))
+// console.log("type total-->",typeof(total))
 
-console.log(total)
+// console.log(total)
 
+
+// Part C: Creating, removing, rendering (about 60 minutes)
+
+// Create a li for “Lemonade” (price 50, class item),
+//  put its price in data-price, and
+//  add it to the end of #menu. Then add “Water” at the start.
+
+const menu = document.querySelector("#menu");
+
+const Lemon = document.createElement("li");
+
+Lemon.textContent = "Lemonade";
+
+Lemon.classList.add("item");
+Lemon.dataset.price = "50";
+
+menu.append(Lemon)
+
+Lemon.textContent = `Water + ${Lemon.textContent}`
 
 
