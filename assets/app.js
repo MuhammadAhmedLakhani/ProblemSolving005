@@ -109,17 +109,57 @@
 //  put its price in data-price, and
 //  add it to the end of #menu. Then add “Water” at the start.
 
-const menu = document.querySelector("#menu");
+// const menu = document.querySelector("#menu");
 
-const Lemon = document.createElement("li");
+// const Lemon = document.createElement("li");
 
-Lemon.textContent = "Lemonade";
+// Lemon.textContent = "Lemonade";
 
-Lemon.classList.add("item");
-Lemon.dataset.price = "50";
+// Lemon.classList.add("item");
+// Lemon.dataset.price = "50";
 
-menu.append(Lemon)
+// menu.append(Lemon)
 
-Lemon.textContent = `Water + ${Lemon.textContent}`
+// Lemon.textContent = `Water + ${Lemon.textContent}`
+
+//8:Render from data. Given:
+// javascript
+const drinks = [
+    { name: "Tea", price: 40, stock: 10 },
+    { name: "Coffee", price: 60, stock: 0 },
+    { name: "Juice", price: 80, stock: 5 },
+];
+const drinks2 = [
+    { name: "Lemon Water", price: 40, stock: 10 },
+    { name: "Colddrink", price: 60, stock: 0 },
+    { name: "Orange Juice", price: 80, stock: 5 },
+    { name: "Mango Juice", price: 80, stock: 5 },
+];
+
+// Write renderMenu(list) that empties #menu first,
+//  then creates one li per drink showing name -
+//  price. Out-of-stock drinks get the class done.
+//  An empty list shows No items. Call it twice and 
+// prove the menu doesn’t contain duplicates.
 
 
+const renderMenu = (list) => {
+    // empty menu
+    let menu = document.querySelector("#menu").textContent = "";
+
+    list.forEach(elem => {
+        let li = document.createElement("li")
+        li.textContent = `${elem.name}`;
+        li.dataset.price = `${elem.price}`;
+        if (elem.stock <= 0) {
+            li.classList.add("done");
+        }
+
+        let menu = document.querySelector("#menu")
+        menu.append(li)
+    });
+
+}
+
+renderMenu(drinks)
+renderMenu(drinks2)
