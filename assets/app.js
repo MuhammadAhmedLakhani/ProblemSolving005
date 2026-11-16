@@ -24,11 +24,11 @@
 //     console.log(error.message)
 //  }
 
-   //  3:Predict: you have const a = document.querySelectorAll(".item") 
-   // and const b = document.getElementsByClassName("item").
-   //  Add a new li.item to the page from your script.
-   //  Which of a.length and b.length changes,
-   //  and why? (One list is a snapshot, the other keeps itself up to date.)
+//  3:Predict: you have const a = document.querySelectorAll(".item") 
+// and const b = document.getElementsByClassName("item").
+//  Add a new li.item to the page from your script.
+//  Which of a.length and b.length changes,
+//  and why? (One list is a snapshot, the other keeps itself up to date.)
 
 
 // const a = document.querySelectorAll(".item") 
@@ -61,21 +61,46 @@
 // title.textContent = "<b>Hi</b>";   //not evaliated simply 
 // title.innerHTML= "<b>Hi</b>";      //Hi is addede as a string
 
-   //of comes from a user , a user can run scripts 
+//of comes from a user , a user can run scripts 
 
-   //5:Using classList on the second .note: add highlight, remove it,
-   //  then toggle it twice. Predict what contains("highlight") returns after the two toggles.
+//5:Using classList on the second .note: add highlight, remove it,
+//  then toggle it twice. Predict what contains("highlight") returns after the two toggles.
 
 
-   const notes = document.querySelectorAll(".note");
+//    const notes = document.querySelectorAll(".note");
 
-   const secondNote = notes[1];
+//    const secondNote = notes[1];
 
-   secondNote.classList.add("highlight");//added highlight class and note class is preserved
+//    secondNote.classList.add("highlight");//added highlight class and note class is preserved
 
-   secondNote.classList.remove("highlight")
-   secondNote.classList.toggle("highlight")
-   secondNote.classList.toggle("highlight")
+//    secondNote.classList.remove("highlight")
+//    secondNote.classList.toggle("highlight")
+//    secondNote.classList.toggle("highlight")
 
-   console.log(secondNote.classList.contains("highlight"))
-   
+//    console.log(secondNote.classList.contains("highlight"))
+
+//6: The string trap. The three li elements have data-price.
+//  Read each price with dataset.price. Predict the type,
+//  and predict what "40" + "60" gives. Compute the total price 
+// of all items, correctly. Prove your total is a number with typeof.
+
+
+const items = document.querySelectorAll(".item");
+
+// turnit into  list first
+
+const arr = [...items]
+
+
+const total = arr.reduce((sum, elem) => {
+    return sum + Number(elem.dataset.price)
+}, 0);
+
+// typeof total
+
+console.log("type total-->",typeof(total))
+
+console.log(total)
+
+
+
